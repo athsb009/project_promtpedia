@@ -8,7 +8,7 @@ import Fields from "./Fields";
 const PromptCardList = ({ data, handleTagClick }) => {
  
   return (
-    <div className='w-1/2 mt-2 space-y-6   flex flex-col '>
+    <div className='w-1/2 mt-2 space-y-6  flex flex-col '>
       {data.map((post) => (
         <PromptCard
           key={post._id}
@@ -28,15 +28,17 @@ const Feed = () => {
   const [searchTimeout, setSearchTimeout] = useState(null);
   const [searchedResults, setSearchedResults] = useState([]);
 
-  const fetchPosts = async () => {
-    const response = await fetch("/api/prompt");
-    const data = await response.json();
-
-    setAllPosts(data);
-  };
+  
 
   useEffect(() => {
+    const fetchPosts = async () => {
+      const response = await fetch("/api/prompt");
+      const data = await response.json();
+  
+      setAllPosts(data);
+    };
     fetchPosts();
+    
   }, []);
 
   const filterPrompts = (searchtext) => {

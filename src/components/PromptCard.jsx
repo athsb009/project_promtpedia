@@ -73,6 +73,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
     <p className="text-black font-bold mr-2">UPVOTES:</p>
     <div className="rounded-full bg-black text-white text-center w-7 h-7 flex justify-center items-center">
       {post.likes}
+    
     </div>
   </div>
 </div>
